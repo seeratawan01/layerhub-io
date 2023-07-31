@@ -4,6 +4,7 @@
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
+  "homepage": "https://www.postnitro.ai",
   "exports": {
     ".": "./dist/index.js",
     "./styles.css": "./dist/style.css"

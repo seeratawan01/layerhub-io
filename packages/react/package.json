@@ -3,6 +3,7 @@
   "version": "0.3.3",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "homepage": "https://www.postnitro.ai",
   "license": "MIT",
   "scripts": {
     "build": "pnpm run clean && pnpm run compile",
