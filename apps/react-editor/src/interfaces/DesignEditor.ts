@@ -1,4 +1,4 @@
-import { IFrame } from "@layerhub-io/types"
+import { IFrame } from "@see-design/types"
 
 export interface Page {
   id: string

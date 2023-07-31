@@ -1,5 +1,5 @@
 import React from "react"
-import { Canvas } from "@layerhub-io/react"
+import { Canvas } from "@see-design/react"
 import Playback from "../Playback"
 import useDesignEditorContext from "~/hooks/useDesignEditorContext"
 import ContextMenu from "../ContextMenu"

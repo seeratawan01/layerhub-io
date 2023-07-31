@@ -1,4 +1,4 @@
-import { IStaticText } from "@layerhub-io/types"
+import { IStaticText } from "@see-design/types"
 import { groupBy } from "lodash"
 
 export const getTextProperties = (object: Required<IStaticText>, fonts: any[]) => {

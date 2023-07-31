@@ -1,5 +1,5 @@
 import React from "react"
-import { useEditor } from "@layerhub-io/react"
+import { useEditor } from "@see-design/react"
 import { Block } from "baseui/block"
 import { loadFonts } from "~/utils/fonts"
 import Scrollable from "~/components/Scrollable"

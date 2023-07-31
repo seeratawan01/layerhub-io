@@ -1,5 +1,5 @@
 import * as React from "react"
-import { EditorState } from "@layerhub-io/core"
+import { EditorState } from "@see-design/core"
 
 const Context = React.createContext<EditorState>({
   zoomRatio: 1,

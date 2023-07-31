@@ -1,6 +1,6 @@
 import fabric from "fabric/fabric-impl"
 import { Editor } from "../editor"
-import { EditorConfig } from "@layerhub-io/types"
+import { EditorConfig } from "@see-design/types"
 
 export type Direction = "top" | "left"
 export type Size = "width" | "height"

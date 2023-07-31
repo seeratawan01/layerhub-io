@@ -1,4 +1,4 @@
-# @layerhub-io/objects
+# @see-design/objects
 
 ## 0.2.0
 

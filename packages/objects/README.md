@@ -1,1 +1,1 @@
-# @layerhub-io/objects
+# @see-design/objects

@@ -15,7 +15,7 @@ import {
   IStaticText,
   IStaticVector,
   IStaticVideo,
-} from "@layerhub-io/types"
+} from "@see-design/types"
 import { createVideoElement } from "./video-loader"
 
 class ObjectImporter {

@@ -1,5 +1,5 @@
 {
-  "name": "layerhub-io",
+  "name": "see-design",
   "scripts": {
     "build": "pnpm turbo run build"
   },

@@ -1,1 +1,1 @@
-# @layerhub-io/react
+# @see-design/react

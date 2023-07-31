@@ -1,1 +1,1 @@
-# @layerhub-io/core
+# @see-design/core

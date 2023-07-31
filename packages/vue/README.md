@@ -1,1 +1,1 @@
-# @layerhub-io/vue
+# @see-design/vue

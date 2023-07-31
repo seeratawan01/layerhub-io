@@ -1,4 +1,4 @@
-# @layerhub-io/types
+# @see-design/types
 
 ## 0.3.0
 

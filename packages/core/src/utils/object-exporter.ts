@@ -9,7 +9,7 @@ import {
   IBackground,
   IGroup,
   IBackgroundImage,
-} from "@layerhub-io/types"
+} from "@see-design/types"
 import { LayerType } from "../common/constants"
 
 class ObjectExporter {

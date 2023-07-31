@@ -1,4 +1,4 @@
-# layerhub-io
+# See-design SDK (Forked from layerhub-io)
 
 ## Development
 

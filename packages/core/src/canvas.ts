@@ -1,6 +1,6 @@
 import { fabric } from "fabric"
 import { FabricCanvas } from "./common/interfaces"
-import { EditorConfig } from "@layerhub-io/types"
+import { EditorConfig } from "@see-design/types"
 import type { Editor } from "."
 
 class Canvas {

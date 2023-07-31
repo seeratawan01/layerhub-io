@@ -1,7 +1,7 @@
 import React from "react"
 import { Modal, ROLE, SIZE } from "baseui/modal"
 import { ThemeProvider, LightTheme } from "baseui"
-import { useEditor } from "@layerhub-io/react"
+import { useEditor } from "@see-design/react"
 
 interface Props {
   isOpen: boolean
