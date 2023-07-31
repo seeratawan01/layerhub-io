@@ -1,4 +1,4 @@
-import { IFrame } from "@see-design/types"
+import { IFrame } from "@postnitro-sdk/types"
 
 export interface Page {
   id: string

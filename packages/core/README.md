@@ -1,1 +1,1 @@
-# @see-design/core
+# @postnitro-sdk/core

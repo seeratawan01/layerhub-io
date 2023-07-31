@@ -1,5 +1,5 @@
 {
-  "name": "@see-design/vue-editor",
+  "name": "@postnitro-sdk/vue-editor",
   "private": true,
   "version": "0.0.1",
   "scripts": {
@@ -7,7 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@see-design/vue": "workspace:^0.1.2",
+    "@postnitro-sdk/vue": "workspace:^0.1.2",
     "vue": "3.2.25"
   },
   "devDependencies": {

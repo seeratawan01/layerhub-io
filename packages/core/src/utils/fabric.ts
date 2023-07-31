@@ -1,4 +1,4 @@
-import { ILayer } from "@see-design/types"
+import { ILayer } from "@postnitro-sdk/types"
 import { fabric } from "fabric"
 import { isNaN } from "lodash"
 import { ShadowOptions } from "../common/interfaces"

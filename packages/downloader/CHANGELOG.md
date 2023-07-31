@@ -1,4 +1,4 @@
-# @see-design/downloader
+# @postnitro-sdk/downloader
 
 ## 0.1.0
 

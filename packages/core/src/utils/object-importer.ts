@@ -15,7 +15,7 @@ import {
   IStaticText,
   IStaticVector,
   IStaticVideo,
-} from "@see-design/types"
+} from "@postnitro-sdk/types"
 import { createVideoElement } from "./video-loader"
 
 class ObjectImporter {

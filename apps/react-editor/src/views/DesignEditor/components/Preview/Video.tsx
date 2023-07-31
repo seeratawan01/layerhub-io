@@ -1,7 +1,7 @@
 import React from "react"
 import { Block } from "baseui/block"
 import ReactPlayer from "react-player"
-import { useEditor } from "@see-design/react"
+import { useEditor } from "@postnitro-sdk/react"
 import Loading from "~/components/Loading"
 import useDesignEditorPages from "~/hooks/useDesignEditorScenes"
 

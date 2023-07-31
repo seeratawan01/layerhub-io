@@ -1,5 +1,5 @@
 import React from "react"
-import { useEditor } from "@see-design/react"
+import { useEditor } from "@postnitro-sdk/react"
 import { useStyletron } from "baseui"
 import { Block } from "baseui/block"
 import { Button, SIZE } from "baseui/button"

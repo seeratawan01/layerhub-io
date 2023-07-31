@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { initStore } from "@see-design/vue"
+import { initStore } from "@postnitro-sdk/vue"
 import Editor from "./Editor.vue"
 initStore()
 </script>

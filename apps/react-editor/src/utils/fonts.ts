@@ -1,5 +1,5 @@
 import { FontItem } from "~/interfaces/common"
-import { IScene, ILayer, IStaticText } from "@see-design/types"
+import { IScene, ILayer, IStaticText } from "@postnitro-sdk/types"
 
 const getFontsFromObjects = (objects: Partial<ILayer>[]) => {
   let fonts: any[] = []

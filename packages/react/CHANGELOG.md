@@ -1,4 +1,4 @@
-# @see-design/react
+# @postnitro-sdk/react
 
 ## 0.3.3
 
@@ -6,7 +6,7 @@
 
 - fix object position on manual update
 - Updated dependencies
-  - @see-design/core@0.3.3
+  - @postnitro-sdk/core@0.3.3
 
 ## 0.3.2
 
@@ -14,7 +14,7 @@
 
 - fix video loading
 - Updated dependencies
-  - @see-design/core@0.3.2
+  - @postnitro-sdk/core@0.3.2
 
 ## 0.3.1
 
@@ -22,7 +22,7 @@
 
 - fix background image on added to editor
 - Updated dependencies
-  - @see-design/core@0.3.1
+  - @postnitro-sdk/core@0.3.1
 
 ## 0.3.0
 
@@ -33,7 +33,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @see-design/core@0.3.0
+  - @postnitro-sdk/core@0.3.0
 
 ## 0.2.6
 
@@ -41,7 +41,7 @@
 
 - Push history on load template from json
 - Updated dependencies
-  - @see-design/core@0.2.6
+  - @postnitro-sdk/core@0.2.6
 
 ## 0.2.5
 
@@ -49,7 +49,7 @@
 
 - Add debug option
 - Updated dependencies
-  - @see-design/core@0.2.5
+  - @postnitro-sdk/core@0.2.5
 
 ## 0.2.4
 
@@ -57,7 +57,7 @@
 
 - fix updated being updated twice
 - Updated dependencies
-  - @see-design/core@0.2.4
+  - @postnitro-sdk/core@0.2.4
 
 ## 0.2.3
 
@@ -65,7 +65,7 @@
 
 - update shadow apply
 - Updated dependencies
-  - @see-design/core@0.2.3
+  - @postnitro-sdk/core@0.2.3
 
 ## 0.2.2
 
@@ -73,7 +73,7 @@
 
 - make dynamic canvas background
 - Updated dependencies
-  - @see-design/core@0.2.2
+  - @postnitro-sdk/core@0.2.2
 
 ## 0.2.1
 
@@ -81,7 +81,7 @@
 
 - make frame selectable
 - Updated dependencies
-  - @see-design/core@0.2.1
+  - @postnitro-sdk/core@0.2.1
 
 ## 0.2.0
 
@@ -92,7 +92,7 @@
 ### Patch Changes
 
 - Updated dependencies [5fbb000]
-  - @see-design/core@0.2.0
+  - @postnitro-sdk/core@0.2.0
 
 ## 0.1.0
 
@@ -103,4 +103,4 @@
 ### Patch Changes
 
 - Updated dependencies [cfd5294]
-  - @see-design/core@0.1.0
+  - @postnitro-sdk/core@0.1.0

@@ -1,6 +1,6 @@
 import React from "react"
 import { Block } from "baseui/block"
-import { useEditor } from "@see-design/react"
+import { useEditor } from "@postnitro-sdk/react"
 import { PLACEMENT, StatefulTooltip } from "baseui/tooltip"
 import { Button, SIZE, KIND } from "baseui/button"
 import UnlockedIcon from "~/components/Icons/Unlocked"

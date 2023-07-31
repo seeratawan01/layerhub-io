@@ -1,4 +1,4 @@
-import { IScene } from "@see-design/types"
+import { IScene } from "@postnitro-sdk/types"
 
 export const findSceneIndexByTime = (scenes: IScene[], time: number) => {
   let currentIndex = 0

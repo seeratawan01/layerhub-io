@@ -1,6 +1,6 @@
 import fabric from "fabric/fabric-impl"
 import { Editor } from "../editor"
-import { EditorConfig } from "@see-design/types"
+import { EditorConfig } from "@postnitro-sdk/types"
 
 export type Direction = "top" | "left"
 export type Size = "width" | "height"

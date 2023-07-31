@@ -1,6 +1,6 @@
 import { fabric } from "fabric"
 import { FabricCanvas } from "./common/interfaces"
-import { EditorConfig } from "@see-design/types"
+import { EditorConfig } from "@postnitro-sdk/types"
 import type { Editor } from "."
 
 class Canvas {

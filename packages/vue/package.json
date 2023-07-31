@@ -1,5 +1,5 @@
 {
-  "name": "@see-design/vue",
+  "name": "@postnitro-sdk/vue",
   "version": "0.1.2",
   "type": "module",
   "main": "dist/index.cjs",
@@ -24,8 +24,8 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@see-design/core": "workspace:^0.3.0",
-    "@see-design/objects": "workspace:^0.2.0",
+    "@postnitro-sdk/core": "workspace:^0.3.0",
+    "@postnitro-sdk/objects": "workspace:^0.2.0",
     "resize-observer-polyfill": "1.5.1",
     "rollup": "2.74.1",
     "rollup-plugin-typescript2": "0.31.2",

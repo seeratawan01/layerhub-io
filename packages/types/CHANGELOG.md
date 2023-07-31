@@ -1,4 +1,4 @@
-# @see-design/types
+# @postnitro-sdk/types
 
 ## 0.3.0
 

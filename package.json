@@ -1,5 +1,5 @@
 {
-  "name": "see-design",
+  "name": "postnitro-sdk",
   "scripts": {
     "build": "pnpm turbo run build"
   },

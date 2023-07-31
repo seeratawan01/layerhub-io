@@ -1,7 +1,7 @@
 import { Editor } from ".."
 import { EditorState } from "../common/interfaces"
 import { ControllerOptions, FabricCanvas } from "../common/interfaces"
-import { EditorConfig } from "@see-design/types"
+import { EditorConfig } from "@postnitro-sdk/types"
 class Base {
   protected canvas: FabricCanvas
   protected config: EditorConfig

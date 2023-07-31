@@ -11,7 +11,7 @@ import {
   IStaticPath,
   IStaticText,
   IStaticVector,
-} from "@see-design/types"
+} from "@postnitro-sdk/types"
 
 class ObjectImporter {
   async import(item: any, params: any): Promise<fabric.Object> {

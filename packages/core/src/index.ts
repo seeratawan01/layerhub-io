@@ -1,4 +1,4 @@
-import "@see-design/objects"
+import "@postnitro-sdk/objects"
 export * from "./common/constants"
 export * from "./common/interfaces"
 export * from "./editor"

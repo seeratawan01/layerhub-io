@@ -1,10 +1,11 @@
 {
-  "name": "@see-design/core",
+  "name": "@postnitro-sdk/core",
   "version": "0.3.3",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "homepage": "https://www.postnitro.ai",
+  "repository": "https://github.com/seeratawan01/layerhub-io",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
@@ -19,11 +20,12 @@
     "typescript": "4.6.3"
   },
   "dependencies": {
-    "@see-design/objects": "workspace:^0.2.0",
-    "@see-design/types": "workspace:^0.3.0",
+    "@postnitro-sdk/objects": "workspace:^0.2.0",
+    "@postnitro-sdk/types": "workspace:^0.3.0",
     "fabric": "5.2.1",
     "lodash": "4.17.21",
     "nanoid": "3.3.3",
     "resize-observer-polyfill": "1.5.1"
-  }
+  },
+  "access": "public"
 }

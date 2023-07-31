@@ -1,6 +1,6 @@
 import { fabric } from "fabric"
 import { nanoid } from "nanoid"
-import { IScene, ILayer } from "@see-design/types"
+import { IScene, ILayer } from "@postnitro-sdk/types"
 import { LayerType } from "../common/constants"
 import ObjectExporter from "../utils/object-exporter"
 import ObjectImporter from "../utils/object-importer"

@@ -4,7 +4,7 @@ import useDesignEditorContext from "~/hooks/useDesignEditorContext"
 import { nanoid } from "nanoid"
 import useOnClickOutside from "~/hooks/useOnClickOutside"
 import { getDefaultTemplate } from "~/constants/design-editor"
-import { useEditor, useFrame } from "@see-design/react"
+import { useEditor, useFrame } from "@postnitro-sdk/react"
 
 export default function () {
   const {

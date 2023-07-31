@@ -1,5 +1,5 @@
 import { computed, inject, provide, reactive } from "vue"
-import type { EditorState, Editor } from "@see-design/core"
+import type { EditorState, Editor } from "@postnitro-sdk/core"
 
 export const initStore = () => {
   const editorState = reactive<Partial<EditorState>>({

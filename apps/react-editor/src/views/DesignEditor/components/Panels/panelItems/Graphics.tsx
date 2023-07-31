@@ -5,7 +5,7 @@ import { Button, SIZE } from "baseui/button"
 import AngleDoubleLeft from "~/components/Icons/AngleDoubleLeft"
 import Scrollable from "~/components/Scrollable"
 import { vectors } from "~/constants/mock-data"
-import { useEditor } from "@see-design/react"
+import { useEditor } from "@postnitro-sdk/react"
 import useSetIsSidebarOpen from "~/hooks/useSetIsSidebarOpen"
 
 export default function () {

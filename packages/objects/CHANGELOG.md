@@ -1,4 +1,4 @@
-# @see-design/objects
+# @postnitro-sdk/objects
 
 ## 0.2.0
 

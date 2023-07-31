@@ -1,8 +1,8 @@
 import * as React from "react"
-import { Editor } from "@see-design/core"
+import { Editor } from "@postnitro-sdk/core"
 import { Context } from "./context"
 import ResizeObserver from "resize-observer-polyfill"
-import { EditorConfig } from "@see-design/types"
+import { EditorConfig } from "@postnitro-sdk/types"
 
 interface Props {
   config?: Partial<EditorConfig>

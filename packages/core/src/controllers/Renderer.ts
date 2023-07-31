@@ -1,5 +1,5 @@
 import { fabric } from "fabric"
-import { IScene, ILayer } from "@see-design/types"
+import { IScene, ILayer } from "@postnitro-sdk/types"
 import ObjectImporter from "../utils/object-importer-render"
 
 class Renderer {

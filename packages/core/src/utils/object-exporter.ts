@@ -9,7 +9,7 @@ import {
   IBackground,
   IGroup,
   IBackgroundImage,
-} from "@see-design/types"
+} from "@postnitro-sdk/types"
 import { LayerType } from "../common/constants"
 
 class ObjectExporter {

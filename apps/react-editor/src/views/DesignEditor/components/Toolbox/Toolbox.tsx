@@ -1,10 +1,10 @@
 import React from "react"
-import { useActiveObject, useEditor } from "@see-design/react"
+import { useActiveObject, useEditor } from "@postnitro-sdk/react"
 import getSelectionType from "~/utils/get-selection-type"
 import { styled } from "baseui"
 import Items from "./Items"
 import useAppContext from "~/hooks/useAppContext"
-import { ILayer } from "@see-design/types"
+import { ILayer } from "@postnitro-sdk/types"
 
 const DEFAULT_TOOLBOX = "Canvas"
 

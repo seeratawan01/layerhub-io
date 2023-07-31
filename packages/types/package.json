@@ -1,5 +1,5 @@
 {
-  "name": "@see-design/types",
+  "name": "@postnitro-sdk/types",
   "version": "0.3.0",
   "description": "",
   "main": "./dist/index.js",

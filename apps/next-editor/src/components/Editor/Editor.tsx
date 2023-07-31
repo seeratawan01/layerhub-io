@@ -1,5 +1,5 @@
 import React from "react"
-import { Canvas } from "@see-design/react"
+import { Canvas } from "@postnitro-sdk/react"
 export default function () {
   return (
     <Canvas

@@ -1,7 +1,7 @@
 import React from "react"
 import { Modal, ROLE, SIZE } from "baseui/modal"
 import { ThemeProvider, LightTheme } from "baseui"
-import { useEditor } from "@see-design/react"
+import { useEditor } from "@postnitro-sdk/react"
 
 interface Props {
   isOpen: boolean

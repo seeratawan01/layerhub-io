@@ -1,4 +1,4 @@
-# @see-design/core
+# @postnitro-sdk/core
 
 ## 0.3.3
 
@@ -27,8 +27,8 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @see-design/objects@0.2.0
-  - @see-design/types@0.3.0
+  - @postnitro-sdk/objects@0.2.0
+  - @postnitro-sdk/types@0.3.0
 
 ## 0.2.6
 
@@ -66,7 +66,7 @@
 
 - make frame selectable
 - Updated dependencies
-  - @see-design/objects@0.1.1
+  - @postnitro-sdk/objects@0.1.1
 
 ## 0.2.0
 
@@ -77,7 +77,7 @@
 ### Patch Changes
 
 - Updated dependencies [5fbb000]
-  - @see-design/types@0.2.0
+  - @postnitro-sdk/types@0.2.0
 
 ## 0.1.0
 
@@ -88,5 +88,5 @@
 ### Patch Changes
 
 - Updated dependencies [cfd5294]
-  - @see-design/objects@0.1.0
-  - @see-design/types@0.1.0
+  - @postnitro-sdk/objects@0.1.0
+  - @postnitro-sdk/types@0.1.0

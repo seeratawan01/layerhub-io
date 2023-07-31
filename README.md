@@ -1,4 +1,4 @@
-# See-design SDK (Forked from layerhub-io)
+# postnitro-sdk SDK (Forked from layerhub-io)
 
 ## Development
 

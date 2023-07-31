@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Canvas, name, useActiveObject, useEditorObjects, useEditorState } from "@see-design/vue"
+import { Canvas, name, useActiveObject, useEditorObjects, useEditorState } from "@postnitro-sdk/vue"
 import { watch, reactive } from "vue"
 
 const editorState = useEditorState()

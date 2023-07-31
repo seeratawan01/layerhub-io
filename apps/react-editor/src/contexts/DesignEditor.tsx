@@ -1,4 +1,4 @@
-import { IScene } from "@see-design/types"
+import { IScene } from "@postnitro-sdk/types"
 import React from "react"
 import {ContextMenuSceneRequest, ContextMenuTimelineRequest, DesignType, IDesign} from "~/interfaces/DesignEditor"
 

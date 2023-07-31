@@ -1,4 +1,4 @@
-import { ILayer } from "@see-design/types"
+import { ILayer } from "@postnitro-sdk/types"
 import { fabric } from "fabric"
 import { defaultFrameOptions, LayerType, defaultBackgroundOptions } from "../common/constants"
 import { ControllerOptions, Dimension, GradientOptions } from "../common/interfaces"

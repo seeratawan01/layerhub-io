@@ -1,4 +1,4 @@
-import { EditorConfig } from "@see-design/types"
+import { EditorConfig } from "@postnitro-sdk/types"
 
 export const PROPERTIES_TO_INCLUDE = [
   "id",

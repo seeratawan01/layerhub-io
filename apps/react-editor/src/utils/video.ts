@@ -1,4 +1,4 @@
-import { IScene, ILayer } from "@see-design/types"
+import { IScene, ILayer } from "@postnitro-sdk/types"
 
 export const loadVideoResource = (videoSrc: string): Promise<HTMLVideoElement> => {
   return new Promise(function (resolve, reject) {

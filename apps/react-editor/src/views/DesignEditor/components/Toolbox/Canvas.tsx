@@ -2,7 +2,7 @@ import React from "react"
 import { Block } from "baseui/block"
 import Common from "./Common"
 import useAppContext from "~/hooks/useAppContext"
-import { useActiveObject, useEditor } from "@see-design/react"
+import { useActiveObject, useEditor } from "@postnitro-sdk/react"
 
 export default function () {
   const [state, setState] = React.useState({ fill: "#000000" })

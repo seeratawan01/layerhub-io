@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid"
-import { IDesign } from "@see-design/types"
+import { IDesign } from "@postnitro-sdk/types"
 
 export const defaultTemplate: IDesign = {
   id: nanoid(),

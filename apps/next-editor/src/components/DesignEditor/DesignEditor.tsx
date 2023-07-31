@@ -1,7 +1,7 @@
 import React from "react"
 import { styled } from "baseui"
 import { Theme } from "baseui/theme"
-import { Canvas } from "@see-design/react"
+import { Canvas } from "@postnitro-sdk/react"
 import Navbar from "./components/Navbar"
 import { editorFonts } from "~/constants/fonts"
 

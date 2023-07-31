@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@see-design/react-editor", "@see-design/vue-editor"]
+  "ignore": ["@postnitro-sdk/react-editor", "@postnitro-sdk/vue-editor"]
 }

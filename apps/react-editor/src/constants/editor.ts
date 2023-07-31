@@ -1,4 +1,4 @@
-import { ILayer } from "@see-design/types"
+import { ILayer } from "@postnitro-sdk/types"
 
 export const SecondLevelMenus = ["FontFamily"]
 export const FirstLevelMenus = ["Background"]

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { onMounted, onUnmounted } from "vue"
-import { Editor } from "@see-design/core"
+import { Editor } from "@postnitro-sdk/core"
 import { useEditorState } from "./state"
 import ResizeObserver from "resize-observer-polyfill"
 

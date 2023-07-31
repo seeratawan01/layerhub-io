@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid"
-import { IFrame, IScene } from "@see-design/types"
+import { IFrame, IScene } from "@postnitro-sdk/types"
 
 export const defaultTemplate: IScene = {
   id: nanoid(),

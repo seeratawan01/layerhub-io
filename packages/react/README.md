@@ -1,1 +1,1 @@
-# @see-design/react
+# @postnitro-sdk/react

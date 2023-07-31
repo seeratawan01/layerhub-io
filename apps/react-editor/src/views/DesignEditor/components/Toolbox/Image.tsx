@@ -3,7 +3,7 @@ import Common from "./Common"
 import Flip from "./Shared/Flip"
 import { Slider } from "baseui/slider"
 import React from "react"
-import { useActiveObject, useEditor } from "@see-design/react"
+import { useActiveObject, useEditor } from "@postnitro-sdk/react"
 
 export default function() {
   const editor = useEditor()

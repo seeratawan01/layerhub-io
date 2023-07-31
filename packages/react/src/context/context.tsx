@@ -1,5 +1,5 @@
 import * as React from "react"
-import { EditorState } from "@see-design/core"
+import { EditorState } from "@postnitro-sdk/core"
 
 const Context = React.createContext<EditorState>({
   zoomRatio: 1,

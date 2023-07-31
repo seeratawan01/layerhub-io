@@ -1,1 +1,1 @@
-# @see-design/vue
+# @postnitro-sdk/vue
