@@ -1,7 +1,8 @@
 {
   "name": "layerhub-io",
   "scripts": {
-    "build": "pnpm turbo run build"
+    "build": "pnpm turbo run build",
+    "prepack": "pnpm run build && node ./scripts/prepublish.js"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
