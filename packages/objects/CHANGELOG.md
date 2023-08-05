@@ -1,4 +1,4 @@
-# @layerhub-io/objects
+# @nitro-design/objects
 
 ## 0.2.0
 

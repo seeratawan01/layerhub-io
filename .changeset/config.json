@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@layerhub-io/react-editor", "@layerhub-io/vue-editor"]
+  "ignore": ["@nitro-design/react-editor", "@nitro-design/vue-editor"]
 }

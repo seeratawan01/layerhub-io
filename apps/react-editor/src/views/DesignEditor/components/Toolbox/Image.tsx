@@ -3,7 +3,7 @@ import Common from "./Common"
 import Flip from "./Shared/Flip"
 import { Slider } from "baseui/slider"
 import React from "react"
-import { useActiveObject, useEditor } from "@layerhub-io/react"
+import { useActiveObject, useEditor } from "@nitro-design/react"
 
 
 export default function() {

@@ -1,4 +1,4 @@
-import { IFrame } from "@layerhub-io/types"
+import { IFrame } from "@nitro-design/types"
 
 export interface Page {
   id: string

@@ -1,4 +1,4 @@
-import { useContextMenuRequest, useEditor } from "@layerhub-io/react"
+import { useContextMenuRequest, useEditor } from "@nitro-design/react"
 import { useStyletron } from "baseui"
 import BringToFront from "~/components/Icons/BringToFront"
 import Delete from "~/components/Icons/Delete"

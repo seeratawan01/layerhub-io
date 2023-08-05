@@ -1,4 +1,4 @@
-# @layerhub-io/types
+# @nitro-design/types
 
 ## 0.3.0
 

@@ -1,4 +1,4 @@
-import "@layerhub-io/objects"
+import "@nitro-design/objects"
 export * from "./common/constants"
 export * from "./common/interfaces"
 export * from "./editor"

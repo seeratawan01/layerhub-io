@@ -1,5 +1,5 @@
 {
-  "name": "@layerhub-io/objects",
+  "name": "@nitro-design/objects",
   "version": "0.2.0",
   "description": "",
   "main": "./dist/index.js",

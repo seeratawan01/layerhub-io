@@ -1,1 +1,1 @@
-# @layerhub-io/core
+# @nitro-design/core

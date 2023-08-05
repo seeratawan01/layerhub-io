@@ -1,1 +1,1 @@
-# @layerhub-io/downloader
+# @nitro-design/downloader

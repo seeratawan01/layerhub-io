@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid"
-import { IFrame, IScene } from "@layerhub-io/types"
+import { IFrame, IScene } from "@nitro-design/types"
 
 export const defaultTemplate: IScene = {
   id: nanoid(),

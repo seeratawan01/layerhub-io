@@ -1,4 +1,4 @@
-# @layerhub-io/downloader
+# @nitro-design/downloader
 
 ## 0.1.0
 

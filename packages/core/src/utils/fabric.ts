@@ -1,4 +1,4 @@
-import { ILayer } from "@layerhub-io/types"
+import { ILayer } from "@nitro-design/types"
 import { fabric } from "fabric"
 import { isNaN } from "lodash"
 import { ShadowOptions } from "../common/interfaces"

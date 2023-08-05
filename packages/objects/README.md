@@ -1,1 +1,1 @@
-# @layerhub-io/objects
+# @nitro-design/objects

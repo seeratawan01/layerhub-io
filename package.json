@@ -1,5 +1,5 @@
 {
-  "name": "layerhub-io",
+  "name": "nitro-design",
   "scripts": {
     "build": "pnpm turbo run build",
     "prepack": "pnpm run build && node ./scripts/prepublish.js"

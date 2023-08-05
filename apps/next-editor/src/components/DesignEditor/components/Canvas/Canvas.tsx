@@ -1,4 +1,4 @@
-import { Canvas } from "@layerhub-io/react"
+import { Canvas } from "@nitro-design/react"
 
 export default function () {
   return (

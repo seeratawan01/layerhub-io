@@ -1,4 +1,4 @@
-# layerhub-io
+# Nitro Design - Fabric React SDK
 
 ## Development
 

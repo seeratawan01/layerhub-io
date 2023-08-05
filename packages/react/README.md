@@ -1,1 +1,1 @@
-# @layerhub-io/react
+# @nitro-design/react
