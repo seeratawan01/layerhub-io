@@ -15,7 +15,6 @@ class Objects extends Base {
   public copyStyleClipboard: any
 
   public add = async (item: Partial<ILayer>) => {
-    console.log("adding", item)
     const { canvas } = this
     const options = this.editor.frame.options
     const objectImporter = new ObjectImporter(this.editor)
@@ -76,9 +75,6 @@ class Objects extends Base {
     if (id) {
       refObject = this.findOneById(id)
     }
-
-    console.log("refObject", refObject)
-
     const canvas = this.canvas
     if (refObject) {
       for (const property in options) {

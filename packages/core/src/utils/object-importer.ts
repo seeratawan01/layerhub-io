@@ -96,13 +96,11 @@ class ObjectImporter {
   }
 
   public staticImage(item: ILayer, options: Required<ILayer>, inGroup: boolean): Promise<fabric.StaticImage> {
-    console.log("Import", item)
 
     return new Promise(async (resolve, reject) => {
       try {
         const baseOptions = this.getBaseOptions(item, options, inGroup)
         const { src, cropX, cropY, clipPath } = item as IStaticImage
-        console.log("staticImage", item)
 
         const image: any = await loadImageFromURL(src)
 

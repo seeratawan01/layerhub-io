@@ -78,7 +78,6 @@ class ObjectImporter {
   }
 
   public staticImage(item: ILayer): Promise<fabric.StaticImage> {
-    console.log("Import Render", item)
     return new Promise(async (resolve, reject) => {
       try {
         const baseOptions = this.getBaseOptions(item)
