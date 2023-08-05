@@ -116,7 +116,28 @@ class Events extends Base {
       this.editor.objects.select()
     } else if (shourcutsManager.isDelete(event)) {
       event.preventDefault()
+      const activeObject = this.canvas.getActiveObject()
+
+
+      // Condition to prevent deleting frame and if metadata.removeable exists and is false
+      if (activeObject && activeObject.id === 'frame' ||
+        (activeObject && activeObject.metadata && typeof activeObject.metadata.removeable !== 'undefined' && activeObject.metadata.removeable === false)) {
+        return
+      }
+
+      // Check in case of multiple selection '_objects' property exists
+      if (activeObject && activeObject._objects) {
+       // Loop through all selected objects and check if metadata.removeable exists and is false
+        for (let i = 0; i < activeObject._objects.length; i++) {
+          // @ts-ignore
+          if (activeObject._objects[i].metadata && typeof activeObject._objects[i].metadata.removeable !== 'undefined' && activeObject._objects[i].metadata.removeable === false) {
+            return
+          }
+        }
+      }
+
       this.editor.objects.remove()
+
     } else if (shourcutsManager.isCtrlC(event)) {
       event.preventDefault()
       this.editor.objects.copy()

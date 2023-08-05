@@ -17,7 +17,10 @@ export default function() {
         const options = {
           type: "StaticImage",
           src: url,
-          rx: 999
+          rx: 999,
+          metadata: {
+            removeable: false,
+          }
         }
 
         editor.objects.add(options)
