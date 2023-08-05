@@ -7,7 +7,7 @@ import { images } from "~/constants/mock-data"
 import { useEditor } from "@layerhub-io/react"
 import useSetIsSidebarOpen from "~/hooks/useSetIsSidebarOpen"
 
-export default function () {
+export default function() {
   const editor = useEditor()
   const setIsSidebarOpen = useSetIsSidebarOpen()
 
@@ -17,6 +17,7 @@ export default function () {
         const options = {
           type: "StaticImage",
           src: url,
+          rx: 999
         }
 
         editor.objects.add(options)
@@ -33,7 +34,7 @@ export default function () {
           alignItems: "center",
           fontWeight: 500,
           justifyContent: "space-between",
-          padding: "1.5rem",
+          padding: "1.5rem"
         }}
       >
         <Block>Images</Block>
@@ -67,8 +68,8 @@ function ImageItem({ preview, onClick }: { preview: any; onClick?: (option: any)
         borderRadius: "8px",
         overflow: "hidden",
         "::before:hover": {
-          opacity: 1,
-        },
+          opacity: 1
+        }
       })}
     >
       <div
@@ -100,8 +101,8 @@ function ImageItem({ preview, onClick }: { preview: any; onClick?: (option: any)
           height: "100%",
           width: "100%",
           ":hover": {
-            opacity: 1,
-          },
+            opacity: 1
+          }
         })}
       ></div>
       <img
@@ -111,7 +112,7 @@ function ImageItem({ preview, onClick }: { preview: any; onClick?: (option: any)
           height: "100%",
           objectFit: "contain",
           pointerEvents: "none",
-          verticalAlign: "middle",
+          verticalAlign: "middle"
         })}
       />
     </div>

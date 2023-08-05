@@ -78,10 +78,11 @@ class ObjectImporter {
   }
 
   public staticImage(item: ILayer): Promise<fabric.StaticImage> {
+    console.log("Import Render", item)
     return new Promise(async (resolve, reject) => {
       try {
         const baseOptions = this.getBaseOptions(item)
-        const { src, cropX, cropY } = item as IStaticImage
+        const { src, cropX, cropY, clipPath } = item as IStaticImage
 
         const image: any = await loadImageFromURL(src)
         const element = new fabric.StaticImage(image, {
@@ -89,6 +90,14 @@ class ObjectImporter {
           cropX: cropX || 0,
           cropY: cropY || 0,
         })
+
+        if (clipPath) {
+          // Create clip path
+          // @ts-ignore
+          const clipPathRect = new fabric.Rect(clipPath);
+
+          element.set("clipPath", clipPathRect);
+        }
         updateObjectShadow(element, item.shadow)
 
         resolve(element)

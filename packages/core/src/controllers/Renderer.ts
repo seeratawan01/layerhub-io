@@ -49,6 +49,7 @@ class Renderer {
     })
   }
   private async loadTemplate(staticCanvas: fabric.StaticCanvas, template: IScene, params: Record<string, any>) {
+    console.log("loadTemplate")
     const { frame } = template
     this.setDimensions(staticCanvas, frame)
     const objectImporter = new ObjectImporter()

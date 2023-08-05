@@ -15,6 +15,7 @@ class Objects extends Base {
   public copyStyleClipboard: any
 
   public add = async (item: Partial<ILayer>) => {
+    console.log("adding", item)
     const { canvas } = this
     const options = this.editor.frame.options
     const objectImporter = new ObjectImporter(this.editor)
@@ -27,6 +28,7 @@ class Objects extends Base {
     }
 
     const isBackgroundImage = refItem.type === LayerType.BACKGROUND_IMAGE
+    const isStaticImage = refItem.type === LayerType.STATIC_IMAGE
     let currentBackgrounImage: any
     if (isBackgroundImage) {
       currentBackgrounImage = await this.unsetBackgroundImage()
@@ -43,6 +45,12 @@ class Objects extends Base {
     } else {
       canvas.add(object)
       object.center()
+
+      // Check if the object is a STATIC_IMAGE, and if it has a radius property.
+      if (isStaticImage && refItem.rx) {
+        // Call setCornerRadius with the object and the radius.
+        this.setCornerRadius(object, refItem.rx);
+      }
     }
 
     this.state.setActiveObject(object)
@@ -68,6 +76,9 @@ class Objects extends Base {
     if (id) {
       refObject = this.findOneById(id)
     }
+
+    console.log("refObject", refObject)
+
     const canvas = this.canvas
     if (refObject) {
       for (const property in options) {
@@ -90,7 +101,12 @@ class Objects extends Base {
         } else if (property === "shadow") {
           // @ts-ignore
           this.setShadow(options["shadow"])
-        } else if (property === "metadata") {
+        }else if (property === "radius" && refObject.type === LayerType.STATIC_IMAGE) {
+          // @ts-ignore
+          this.setCornerRadius(refObject, options["radius"]);
+          canvas.requestRenderAll()
+        }
+        else if (property === "metadata") {
           refObject.set("metadata", {
             ...refObject.metadata,
             ...options[property],
@@ -117,6 +133,26 @@ class Objects extends Base {
       }
       this.editor.history.save()
     }
+  }
+
+  private setCornerRadius = (refObject: any, cornerRadius: number) => {
+    // Get radius percentage (0-100)
+    const radiusPct = cornerRadius;
+
+    // Calculate actual radius in pixels
+    const radiusPx = Math.min(refObject.width, refObject.height) * (radiusPct / 100);
+
+    // Create clip path
+    const clipPath = new fabric.Rect({
+      width: refObject.width,
+      height: refObject.height,
+      rx: radiusPx / (refObject.scaleX || 1),
+      ry: radiusPx / (refObject.scaleY || 1),
+      left: -(refObject.width || 0) / 2,
+      top: -(refObject.height || 0) / 2
+    });
+
+    refObject.set("clipPath", clipPath);
   }
 
   public clear = () => {

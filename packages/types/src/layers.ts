@@ -82,7 +82,9 @@ interface LayerBaseOptions {
   shadow?: IShadow
   metadata?: Record<string, string | number | boolean>
   animation?: Animation
-  clipPath?: ILayer
+  clipPath?: ILayer | string
+  rx?: number
+  ry?: number
   strokeDashArray?: number[] | undefined
   strokeLineCap?: string | undefined
   strokeLineJoin?: string | undefined
@@ -121,6 +123,7 @@ export interface IStaticImage extends LayerBaseOptions {
   src: string
   cropX?: number
   cropY?: number
+  radius?: number
 }
 
 export interface IBackgroundImage extends IStaticImage {}
