@@ -14,7 +14,7 @@ class Objects extends Base {
   public isCut: any
   public copyStyleClipboard: any
 
-  public add = async (item: Partial<ILayer>) => {
+  public add = async (item: Partial<ILayer>, placementCenter = true) => {
     const { canvas } = this
     const options = this.editor.frame.options
     const objectImporter = new ObjectImporter(this.editor)
@@ -43,7 +43,9 @@ class Objects extends Base {
       }
     } else {
       canvas.add(object)
-      object.center()
+      if (placementCenter) {
+        object.center()
+      }
 
       // Check if the object is a STATIC_IMAGE, and if it has a radius property.
       if (isStaticImage && refItem.rx) {
