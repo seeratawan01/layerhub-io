@@ -1,6 +1,6 @@
 {
   "name": "@nitro-design/core",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -9,7 +9,7 @@
     "build": "tsc",
     "prepublish": "pnpm build"
   },
-  "author": "Dany Boza",
+  "author": "Seerat Awan",
   "license": "ISC",
   "devDependencies": {
     "@types/fabric": "^4.5.7",

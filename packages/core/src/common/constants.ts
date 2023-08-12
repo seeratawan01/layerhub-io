@@ -30,8 +30,8 @@ export const defaultEditorConfig: EditorConfig = {
   background: "#ecf0f1",
   type: "GRAPHIC",
   size: {
-    width: 1200,
-    height: 900,
+    width: 1300,
+    height: 1500,
   },
   controlsPosition: {
     rotation: "TOP",
@@ -46,8 +46,8 @@ export const defaultEditorConfig: EditorConfig = {
 }
 
 export const defaultFrameOptions = {
-  width: 1200,
-  height: 1200,
+  width: 1300,
+  height: 1500,
   id: "frame",
   name: "Initial Frame",
   fill: "#ffffff",
@@ -70,8 +70,8 @@ export enum LayerType {
 }
 
 export const defaultBackgroundOptions = {
-  width: 1200,
-  height: 1200,
+  width: 1300,
+  height: 1500,
   fill: "#ffffff",
   id: "background",
   name: "Initial Frame",
