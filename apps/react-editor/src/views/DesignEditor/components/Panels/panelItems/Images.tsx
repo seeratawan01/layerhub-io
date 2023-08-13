@@ -15,17 +15,17 @@ export default function() {
     (url: string) => {
       if (editor) {
 
-        editor.frame.setBackgroundImage(url)
-        // const options = {
-        //   type: "StaticImage",
-        //   src: url,
-        //   rx: 999,
-        //   metadata: {
-        //     removeable: false,
-        //   }
-        // }
-        //
-        // editor.objects.add(options)
+        // editor.frame.setBackgroundImage(url)
+        const options = {
+          type: "StaticImage",
+          src: url,
+          // rx: 100,
+          metadata: {
+            // removeable: false,
+          }
+        }
+
+        editor.objects.add(options)
       }
     },
     [editor]

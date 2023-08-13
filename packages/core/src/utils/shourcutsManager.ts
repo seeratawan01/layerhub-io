@@ -16,12 +16,12 @@ class ShortcutManager {
 
   // copy
   isCtrlC(event: KeyboardEvent) {
-    return event.ctrlKey && event.code === "KeyC"
+    return event.ctrlKey && event.code === "KeyC" || event.metaKey && event.code === "KeyC"
   }
 
   // paste
   isCtrlV(event: KeyboardEvent) {
-    return event.ctrlKey && event.code === "KeyV"
+    return event.ctrlKey && event.code === "KeyV" || event.metaKey && event.code === "KeyV"
   }
   // redo
   isCtrlY(event: KeyboardEvent) {
@@ -30,7 +30,7 @@ class ShortcutManager {
 
   // cut
   isCtrlX(event: KeyboardEvent) {
-    return event.ctrlKey && event.code === "KeyX"
+    return event.ctrlKey && event.code === "KeyX" || event.metaKey && event.code === "KeyX"
   }
 
   // nudge

@@ -93,6 +93,7 @@ class Events extends Base {
   }
 
   onKeyDown(event: KeyboardEvent) {
+    console.log(event)
     if (shourcutsManager.isCtrlZero(event)) {
       event.preventDefault()
       this.editor.zoom.zoomToFit()
@@ -147,6 +148,15 @@ class Events extends Base {
     } else if (shourcutsManager.isCtrlX(event)) {
       event.preventDefault()
       this.editor.objects.cut()
+    } else if (shourcutsManager.isArrowLeft(event)) {
+      event.preventDefault()
+      this.editor.objects.moveLeft()
+    } else if (shourcutsManager.isArrowRight(event)) {
+      this.editor.objects.moveRight()
+    } else if (shourcutsManager.isArrowUp(event)) {
+      this.editor.objects.moveUp()
+    } else if (shourcutsManager.isArrowDown(event)) {
+      this.editor.objects.moveDown()
     }
   }
 

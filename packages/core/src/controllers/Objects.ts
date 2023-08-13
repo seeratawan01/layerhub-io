@@ -48,9 +48,9 @@ class Objects extends Base {
       }
 
       // Check if the object is a STATIC_IMAGE, and if it has a radius property.
-      if (isStaticImage && refItem.rx) {
+      if (isStaticImage) {
         // Call setCornerRadius with the object and the radius.
-        this.setCornerRadius(object, refItem.rx);
+        this.setCornerRadius(object, refItem.rx || 0)
       }
     }
 
@@ -99,22 +99,21 @@ class Objects extends Base {
         } else if (property === "shadow") {
           // @ts-ignore
           this.setShadow(options["shadow"])
-        }else if (property === "radius" && refObject.type === LayerType.STATIC_IMAGE) {
+        } else if (property === "radius" && refObject.type === LayerType.STATIC_IMAGE) {
           // @ts-ignore
-          this.setCornerRadius(refObject, options["radius"]);
+          this.setCornerRadius(refObject, options["radius"])
           canvas.requestRenderAll()
-        }
-        else if (property === "metadata") {
+        } else if (property === "metadata") {
           refObject.set("metadata", {
             ...refObject.metadata,
-            ...options[property],
+            ...options[property]
           })
         } else if (refObject.type === LayerType.ACTIVE_SELECTION && refObject._objects) {
           refObject._objects.forEach((object) => {
             if (property === "metadata") {
               object.set("metadata", {
                 ...object.metadata,
-                ...options["metadata"],
+                ...options["metadata"]
               })
             } else {
               // @ts-ignore
@@ -135,10 +134,10 @@ class Objects extends Base {
 
   private setCornerRadius = (refObject: any, cornerRadius: number) => {
     // Get radius percentage (0-100)
-    const radiusPct = cornerRadius;
+    const radiusPct = cornerRadius
 
     // Calculate actual radius in pixels
-    const radiusPx = Math.min(refObject.width, refObject.height) * (radiusPct / 100);
+    const radiusPx = Math.min(refObject.width, refObject.height) * (radiusPct / 100)
 
     // Create clip path
     const clipPath = new fabric.Rect({
@@ -148,9 +147,9 @@ class Objects extends Base {
       ry: radiusPx / (refObject.scaleY || 1),
       left: -(refObject.width || 0) / 2,
       top: -(refObject.height || 0) / 2
-    });
+    })
 
-    refObject.set("clipPath", clipPath);
+    refObject.set("clipPath", clipPath)
   }
 
   public clear = () => {
@@ -161,7 +160,7 @@ class Objects extends Base {
       }
     })
     frame.set({
-      fill: "#ffffff",
+      fill: "#ffffff"
     })
     this.canvas.renderAll()
   }
@@ -175,12 +174,11 @@ class Objects extends Base {
       }
     })
     background?.set({
-      fill: "#ffffff",
+      fill: "#ffffff"
     })
     this.canvas.renderAll()
     this.editor.history.reset()
   }
-
   public select = (id?: string) => {
     this.canvas.discardActiveObject()
     if (id) {
@@ -218,7 +216,7 @@ class Objects extends Base {
         return
       }
       const activeSelection = new fabric.ActiveSelection(filteredObjects, {
-        canvas: this.canvas,
+        canvas: this.canvas
       }) as fabric.Object
       this.canvas.setActiveObject(activeSelection)
       this.canvas.renderAll()
@@ -242,6 +240,42 @@ class Objects extends Base {
       refObject.set(direction, updatedPosition)
       this.editor.history.save()
     }
+  }
+
+  /**
+   * Move the object left by 1px
+   */
+  public moveLeft = (id?: string) => {
+    this.move("left", -10, id)
+    this.canvas.requestRenderAll()
+
+  }
+
+  /**
+   * Move the object right by 1px
+   */
+  public moveRight = (id?: string) => {
+    this.move("left", 10, id)
+    this.canvas.requestRenderAll()
+
+  }
+
+  /**
+   * Move the object up by 1px
+   */
+  public moveUp = (id?: string) => {
+    this.move("top", -10, id)
+    this.canvas.requestRenderAll()
+
+  }
+
+  /**
+   * Move the object down by 1px
+   */
+  public moveDown = (id?: string) => {
+    this.move("top", 10, id)
+    this.canvas.requestRenderAll()
+
   }
 
   public position(position: Direction, value: number, id?: string) {
@@ -283,13 +317,13 @@ class Objects extends Base {
       if (type === "fit") {
         refObject.set({
           scaleX: scaleMin,
-          scaleY: scaleMin,
+          scaleY: scaleMin
         })
       }
       if (type === "fill") {
         refObject.set({
           scaleY: scaleMax,
-          scaleX: scaleMax,
+          scaleX: scaleMax
         })
       }
       refObject.center()
@@ -328,7 +362,7 @@ class Objects extends Base {
 
       this.duplicate(activeObject, frame, (duplicates) => {
         const selection = new fabric.ActiveSelection(duplicates, {
-          canvas: this.canvas,
+          canvas: this.canvas
         }) as fabric.Object
         this.canvas.setActiveObject(selection)
         this.canvas.requestRenderAll()
@@ -365,7 +399,7 @@ class Objects extends Base {
           clone.id = nanoid()
           clone.set({
             left: object.left! + 10,
-            top: object.top! + 10,
+            top: object.top! + 10
           })
           if (this.config.clipToFrame) {
             const frame = this.editor.frame.frame
@@ -386,7 +420,7 @@ class Objects extends Base {
       this.canvas.discardActiveObject()
       this.duplicate(object, frame, (duplicates) => {
         const selection = new fabric.ActiveSelection(duplicates, {
-          canvas: this.canvas,
+          canvas: this.canvas
         }) as fabric.Object
         this.canvas.setActiveObject(selection)
         this.canvas.requestRenderAll()
@@ -435,7 +469,7 @@ class Objects extends Base {
 
       this.copyStyleClipboard = {
         objectType: activeObject.type,
-        props: clonedProps,
+        props: clonedProps
       }
 
       this.editor.frame.setHoverCursor(getCopyStyleCursor())
@@ -559,18 +593,18 @@ class Objects extends Base {
         selectedObjects.forEach((object) => {
           const currentObject = object
           currentObject.set({
-            top: refTop,
+            top: refTop
           })
         })
         const selection = new fabric.ActiveSelection(selectedObjects, {
-          canvas: this.canvas,
+          canvas: this.canvas
         }) as fabric.Object
         this.canvas.setActiveObject(selection)
         this.state.setActiveObject(selection)
       } else {
         const currentObject = refObject
         currentObject.set({
-          top: frame.top,
+          top: frame.top
         })
       }
       this.canvas.requestRenderAll()
@@ -597,11 +631,11 @@ class Objects extends Base {
           const currentObject = object
           const currentObjectHeight = currentObject.getScaledHeight()
           currentObject.set({
-            top: refTop + refHeight / 2 - currentObjectHeight / 2,
+            top: refTop + refHeight / 2 - currentObjectHeight / 2
           })
         })
         const selection = new fabric.ActiveSelection(selectedObjects, {
-          canvas: this.canvas,
+          canvas: this.canvas
         }) as fabric.Object
         this.canvas.setActiveObject(selection)
         this.state.setActiveObject(selection)
@@ -609,7 +643,7 @@ class Objects extends Base {
         const currentObject = refObject
         const currentObjectHeight = currentObject.getScaledHeight()
         currentObject.set({
-          top: frame.top + frame.height / 2 - currentObjectHeight / 2,
+          top: frame.top + frame.height / 2 - currentObjectHeight / 2
         })
       }
       this.canvas.requestRenderAll()
@@ -637,11 +671,11 @@ class Objects extends Base {
           const currentObject = object
           const currentObjectHeight = currentObject.getScaledHeight()
           currentObject.set({
-            top: refTop + refHeight - currentObjectHeight,
+            top: refTop + refHeight - currentObjectHeight
           })
         })
         const selection = new fabric.ActiveSelection(selectedObjects, {
-          canvas: this.canvas,
+          canvas: this.canvas
         }) as fabric.Object
         this.canvas.setActiveObject(selection)
         this.state.setActiveObject(selection)
@@ -649,7 +683,7 @@ class Objects extends Base {
         const currentObject = refObject
         const currentObjectHeight = currentObject.getScaledHeight()
         currentObject.set({
-          top: frame.top + frame.height - currentObjectHeight,
+          top: frame.top + frame.height - currentObjectHeight
         })
       }
       this.canvas.requestRenderAll()
@@ -675,18 +709,18 @@ class Objects extends Base {
         selectedObjects.forEach((object) => {
           const currentObject = object
           currentObject.set({
-            left: refLeft,
+            left: refLeft
           })
         })
         const selection = new fabric.ActiveSelection(selectedObjects, {
-          canvas: this.canvas,
+          canvas: this.canvas
         }) as fabric.Object
         this.canvas.setActiveObject(selection)
         this.state.setActiveObject(selection)
       } else {
         const currentObject = refObject
         currentObject.set({
-          left: frame.left,
+          left: frame.left
         })
       }
       this.canvas.requestRenderAll()
@@ -714,11 +748,11 @@ class Objects extends Base {
           const currentObject = object
           const currentObjectWidth = currentObject.getScaledWidth()
           currentObject.set({
-            left: refLeft + refWidth / 2 - currentObjectWidth / 2,
+            left: refLeft + refWidth / 2 - currentObjectWidth / 2
           })
         })
         const selection = new fabric.ActiveSelection(selectedObjects, {
-          canvas: this.canvas,
+          canvas: this.canvas
         }) as fabric.Object
         this.canvas.setActiveObject(selection)
         this.state.setActiveObject(selection)
@@ -726,7 +760,7 @@ class Objects extends Base {
         const currentObject = refObject
         const currentObjectWidth = currentObject.getScaledWidth()
         currentObject.set({
-          left: frame.left + frame.width / 2 - currentObjectWidth / 2,
+          left: frame.left + frame.width / 2 - currentObjectWidth / 2
         })
       }
       this.canvas.requestRenderAll()
@@ -753,11 +787,11 @@ class Objects extends Base {
           const currentObject = object
           const currentObjectWidth = currentObject.getScaledWidth()
           currentObject.set({
-            left: refLeft + refWidth - currentObjectWidth,
+            left: refLeft + refWidth - currentObjectWidth
           })
         })
         const selection = new fabric.ActiveSelection(selectedObjects, {
-          canvas: this.canvas,
+          canvas: this.canvas
         }) as fabric.Object
         this.canvas.setActiveObject(selection)
         this.state.setActiveObject(selection)
@@ -765,7 +799,7 @@ class Objects extends Base {
         const currentObject = refObject
         const currentObjectWidth = currentObject.getScaledWidth()
         currentObject.set({
-          left: frame.left + frame.width - currentObjectWidth,
+          left: frame.left + frame.width - currentObjectWidth
         })
       }
       this.canvas.requestRenderAll()
@@ -880,7 +914,7 @@ class Objects extends Base {
       name: "group",
       id: nanoid(),
       // @ts-ignore
-      subTargetCheck: true,
+      subTargetCheck: true
     })
     this.updateContextObjects()
   }
@@ -922,7 +956,7 @@ class Objects extends Base {
             hasControls: false,
             lockMovementY: true,
             lockMovementX: true,
-            locked: true,
+            locked: true
           })
         })
         // @ts-ignore
@@ -930,7 +964,7 @@ class Objects extends Base {
           hasControls: false,
           lockMovementY: true,
           lockMovementX: true,
-          locked: true,
+          locked: true
         })
       } else {
         // @ts-ignore
@@ -938,7 +972,7 @@ class Objects extends Base {
           hasControls: false,
           lockMovementY: true,
           lockMovementX: true,
-          locked: true,
+          locked: true
         })
       }
       this.canvas.requestRenderAll()
@@ -961,7 +995,7 @@ class Objects extends Base {
             hasControls: true,
             lockMovementY: false,
             lockMovementX: false,
-            locked: false,
+            locked: false
           })
         })
         // @ts-ignore
@@ -969,7 +1003,7 @@ class Objects extends Base {
           hasControls: true,
           lockMovementY: false,
           lockMovementX: false,
-          locked: false,
+          locked: false
         })
       } else {
         // @ts-ignore
@@ -977,7 +1011,7 @@ class Objects extends Base {
           hasControls: true,
           lockMovementY: false,
           lockMovementX: false,
-          locked: false,
+          locked: false
         })
       }
       this.canvas.requestRenderAll()
