@@ -4,6 +4,7 @@ import Flip from "./Shared/Flip"
 import { Slider } from "baseui/slider"
 import React from "react"
 import { useActiveObject, useEditor } from "@nitro-design/react"
+import { Button } from "baseui/button"
 
 
 export default function() {
@@ -38,6 +39,16 @@ export default function() {
     }
   }, [activeObject]);
 
+  const handleUpdateSource = React.useCallback(() => {
+    if (activeObject) {
+      // @ts-ignore
+      const src = 'https://pixabay.com/get/g647c597c08308f73f45f0d9063c79d7bb2ebcfc50fd52f693778cd2a3fb8e9d221b8321622ff9565e55d8913a11ecdb7ac92b037303159132ffbb7d818ccd73a_1280.jpg'
+      if (src) {
+
+        editor.objects.update({ src })
+      }
+    }
+  }, [activeObject])
 
   return (
     <Block
@@ -64,6 +75,7 @@ export default function() {
             marginRight: "12px"
           }}
         >
+          <Button onClick={handleUpdateSource}>Update Src</Button>
           <Slider
 
             overrides={{

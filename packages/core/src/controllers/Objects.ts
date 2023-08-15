@@ -121,7 +121,12 @@ class Objects extends Base {
             }
             object.setCoords()
           })
-        } else {
+        }
+        else if (property === "src" && refObject.type === LayerType.STATIC_IMAGE) {
+          // @ts-ignore
+          this.replaceImage(refObject, options[property])
+        }
+        else {
           // @ts-ignore
           refObject.set(property as keyof fabric.Object, options[property])
           canvas.requestRenderAll()
@@ -130,6 +135,24 @@ class Objects extends Base {
       }
       this.editor.history.save()
     }
+  }
+
+  private replaceImage = (object: fabric.Object, url: string) => {
+    loadImageFromURL(url).then((image) => {
+      // @ts-ignore
+      object.setElement(image)
+      this.canvas.requestRenderAll()
+
+      // But now recalculate the width and height of the object
+      object.width = image.width
+      object.height = image.height
+
+      // RECALCULATE THE clipPath
+      // @ts-ignore
+      this.setCornerRadius(object, object?.clipPath?.rx || 0)
+
+      object.setCoords()
+    })
   }
 
   private setCornerRadius = (refObject: any, cornerRadius: number) => {
