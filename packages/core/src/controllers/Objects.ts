@@ -121,12 +121,10 @@ class Objects extends Base {
             }
             object.setCoords()
           })
-        }
-        else if (property === "src" && refObject.type === LayerType.STATIC_IMAGE) {
+        } else if (property === "src" && refObject.type === LayerType.STATIC_IMAGE) {
           // @ts-ignore
           this.replaceImage(refObject, options[property])
-        }
-        else {
+        } else {
           // @ts-ignore
           refObject.set(property as keyof fabric.Object, options[property])
           canvas.requestRenderAll()
@@ -139,13 +137,18 @@ class Objects extends Base {
 
   private replaceImage = (object: fabric.Object, url: string) => {
     loadImageFromURL(url).then((image) => {
+      const currentObjectWidth = object.getScaledWidth()
+      const currentObjectHeight = object.getScaledHeight()
+
       // @ts-ignore
       object.setElement(image)
       this.canvas.requestRenderAll()
 
-      // But now recalculate the width and height of the object
-      object.width = image.width
-      object.height = image.height
+      // Now calculate the scale factor
+      const scaleFactor = currentObjectWidth / object.getScaledWidth()
+
+      // Now scale the image to the new width and height
+      object.scale(scaleFactor)
 
       // RECALCULATE THE clipPath
       // @ts-ignore

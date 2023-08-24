@@ -42,7 +42,7 @@ export default function() {
   const handleUpdateSource = React.useCallback(() => {
     if (activeObject) {
       // @ts-ignore
-      const src = 'https://pixabay.com/get/g647c597c08308f73f45f0d9063c79d7bb2ebcfc50fd52f693778cd2a3fb8e9d221b8321622ff9565e55d8913a11ecdb7ac92b037303159132ffbb7d818ccd73a_1280.jpg'
+      const src = 'https://images.pexels.com/photos/9589493/pexels-photo-9589493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
       if (src) {
 
         editor.objects.update({ src })
