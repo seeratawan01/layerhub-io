@@ -22,7 +22,9 @@ export default function() {
           // rx: 100,
           metadata: {
             // removeable: false,
-          }
+          },
+          "width": 203,
+          "height": 203,
         }
 
         editor.objects.add(options)

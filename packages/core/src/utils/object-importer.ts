@@ -104,17 +104,28 @@ class ObjectImporter {
 
         const image: any = await loadImageFromURL(src)
 
-        const { width, height } = baseOptions
+        const { width, height, ...rest } = baseOptions
         if (!width || !height) {
           baseOptions.width = image.width
           baseOptions.height = image.height
         }
 
         const element = new fabric.StaticImage(image, {
-          ...baseOptions,
+          ...rest,
           cropX: cropX || 0,
           cropY: cropY || 0,
         })
+
+        // Scale image to fit width or height
+        if (width || height) {
+          const currentObjectWidth = element.getScaledWidth()
+          const currentObjectHeight = element.getScaledWidth()
+          if (width && currentObjectWidth > width) {
+            element.scale(width / currentObjectWidth)
+          } else {
+            element.scale(height / currentObjectHeight)
+          }
+        }
 
         if (clipPath) {
           // Create clip path
