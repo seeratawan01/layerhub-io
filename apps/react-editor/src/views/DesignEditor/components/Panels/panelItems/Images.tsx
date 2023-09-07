@@ -6,10 +6,161 @@ import Scrollable from "~/components/Scrollable"
 import { images } from "~/constants/mock-data"
 import { useEditor } from "@nitro-design/react"
 import useSetIsSidebarOpen from "~/hooks/useSetIsSidebarOpen"
+import { nanoid } from "nanoid"
 
 export default function() {
   const editor = useEditor()
   const setIsSidebarOpen = useSetIsSidebarOpen()
+
+  const HEADSHOT_AVATAR = {
+    "id": nanoid(),
+    "name": "Headshot-Avatar",
+    "radius": 100,
+    "angle": 0,
+    "stroke": null,
+    "strokeWidth": 0,
+    "left": -411.4,
+    "top": -103.53,
+    "width": 203,
+    "height": 203,
+    "opacity": 1,
+    "originX": "left",
+    "originY": "top",
+    "scaleX": 1.02,
+    "scaleY": 1.02,
+    "type": "StaticImage",
+    "flipX": false,
+    "flipY": false,
+    "skewX": 0,
+    "skewY": 0,
+    "visible": true,
+    "shadow": null,
+    "src": 'https://i.ibb.co/82ZTxtj/Untitled-design-3.png',
+    "cropX": 0,
+    "cropY": 0,
+    "metadata": {},
+    "autoScale": true,
+  }
+
+  const HEADSHOT_NAMES = {
+    "id": nanoid(),
+    "name": "Headshot-Names",
+    "angle": 0,
+    "stroke": null,
+    "strokeWidth": 0,
+    "left": -164.65,
+    "top": -75.4,
+    "width": 576.05,
+    "height": 150.68,
+    "opacity": 1,
+    "originX": "left",
+    "originY": "top",
+    "scaleX": 1,
+    "scaleY": 1,
+    "type": "Group",
+    "flipX": false,
+    "flipY": false,
+    "skewX": 0,
+    "skewY": 0,
+    "visible": true,
+    "shadow": null,
+    "objects": [
+      {
+        "id": nanoid(),
+        "name": "Headshot-Name",
+        "angle": 0,
+        "stroke": null,
+        "strokeWidth": 0,
+        "left": -288.02,
+        "top": -75.34,
+        "width": 576.05,
+        "height": 84.23,
+        "opacity": 1,
+        "originX": "left",
+        "originY": "top",
+        "scaleX": 1,
+        "scaleY": 1,
+        "type": "StaticText",
+        "flipX": false,
+        "flipY": false,
+        "skewX": 0,
+        "skewY": 0,
+        "visible": true,
+        "shadow": null,
+        "charSpacing": 0,
+        "fill": "#333333",
+        "fontFamily": "Poppins-Light",
+        "fontSize": 74.53824946898108,
+        "lineHeight": 1.16,
+        "text": "Seerat Awan",
+        "textAlign": "left",
+        "fontURL": "https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLDz8V1tvFP-KUEg.ttf",
+        "metadata": {}
+      },
+      {
+        "id": nanoid(),
+        "name": "Headshot-Username",
+        "angle": 0,
+        "stroke": null,
+        "strokeWidth": 0,
+        "left": -288.02,
+        "top": 17.18,
+        "width": 571.99,
+        "height": 58.16,
+        "opacity": 1,
+        "originX": "left",
+        "originY": "top",
+        "scaleX": 1,
+        "scaleY": 1,
+        "type": "StaticText",
+        "flipX": false,
+        "flipY": false,
+        "skewX": 0,
+        "skewY": 0,
+        "visible": true,
+        "shadow": null,
+        "charSpacing": 0,
+        "fill": "#636363ff",
+        "fontFamily": "KoHo-Light",
+        "fontSize": 51.46490297574535,
+        "lineHeight": 1.16,
+        "text": "@seeratawan01",
+        "textAlign": "left",
+        "fontURL": "https://fonts.gstatic.com/s/koho/v6/K2FxfZ5fmddNPoU2WJ75JoKhHys.ttf",
+        "metadata": {}
+      }
+    ]
+  }
+
+
+  const HEADSHOT_PRESET_MAIN = {
+    "id": nanoid(),
+    "name": "Headshot",
+    "angle": 0,
+    "stroke": null,
+    "strokeWidth": 0,
+    "left": 285.32,
+    "top": 646.47,
+    "width": 822.79,
+    "height": 207.06,
+    "opacity": 1,
+    "originX": "left",
+    "originY": "top",
+    "scaleX": 1,
+    "scaleY": 1,
+    "type": "Group",
+    "flipX": false,
+    "flipY": false,
+    "skewX": 0,
+    "skewY": 0,
+    "visible": true,
+    "shadow": null,
+    "objects": [
+      HEADSHOT_AVATAR,
+      HEADSHOT_NAMES
+    ]
+  }
+
 
   const addObject = React.useCallback(
     (url: string) => {
@@ -17,16 +168,19 @@ export default function() {
 
         // editor.frame.setBackgroundImage(url)
         const options = {
-          type: "StaticImage",
-          src: url,
-          // rx: 100,
-          metadata: {
-            // removeable: false,
-          },
-          "width": 203,
-          "height": 203,
+          ...HEADSHOT_PRESET_MAIN,
+          // type: "StaticImage",
+          // "rx": 100,
+          // src: 'https://imgtr.ee/images/2023/08/27/099707535a520e5cf5c11697a7d6bf2c.png',
+          // // rx: 100,
+          // metadata: {
+          //   // removeable: false,
+          // },
+          // width: 203,
+          // height: 203
         }
 
+        // @ts-ignore
         editor.objects.add(options)
       }
     },

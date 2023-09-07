@@ -124,6 +124,7 @@ export interface IStaticImage extends LayerBaseOptions {
   cropX?: number
   cropY?: number
   radius?: number
+  autoScale?: boolean
 }
 
 export interface IBackgroundImage extends IStaticImage {}

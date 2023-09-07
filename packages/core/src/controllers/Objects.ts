@@ -50,7 +50,9 @@ class Objects extends Base {
       // Check if the object is a STATIC_IMAGE, and if it has a radius property.
       if (isStaticImage) {
         // Call setCornerRadius with the object and the radius.
-        this.setCornerRadius(object, refItem.rx || 0)
+        // @ts-ignore
+        const radius = refItem.radius || refItem.rx
+        this.setCornerRadius(object, radius || 0)
       }
     }
 

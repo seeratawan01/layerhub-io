@@ -100,11 +100,14 @@ class ObjectImporter {
     return new Promise(async (resolve, reject) => {
       try {
         const baseOptions = this.getBaseOptions(item, options, inGroup)
-        const { src, cropX, cropY, clipPath } = item as IStaticImage
+        const { src, cropX, cropY, clipPath, autoScale, radius } = item as IStaticImage
+
+        console.log("radius", radius)
+
 
         const image: any = await loadImageFromURL(src)
 
-        const { width, height, ...rest } = baseOptions
+        let { width, height, ...rest } = baseOptions
         if (!width || !height) {
           baseOptions.width = image.width
           baseOptions.height = image.height
@@ -117,13 +120,19 @@ class ObjectImporter {
         })
 
         // Scale image to fit width or height
-        if (width || height) {
+        if (autoScale) {
           const currentObjectWidth = element.getScaledWidth()
-          const currentObjectHeight = element.getScaledWidth()
+          const currentObjectHeight = element.getScaledHeight()
           if (width && currentObjectWidth > width) {
             element.scale(width / currentObjectWidth)
-          } else {
+          } else if (height && currentObjectHeight > height) {
             element.scale(height / currentObjectHeight)
+          } else {
+            // Calculate scale to fit width or height
+            const scaleWidth = width / currentObjectWidth
+            const scaleHeight = height / currentObjectHeight
+            const scale = Math.min(scaleWidth, scaleHeight)
+            element.scale(scale)
           }
         }
 
@@ -133,6 +142,9 @@ class ObjectImporter {
           const clipPathRect = new fabric.Rect(clipPath);
 
           element.set("clipPath", clipPathRect);
+        } else if (radius) {
+          // Create clip path
+          this.setCornerRadius(element, radius)
         }
 
         updateObjectBounds(element, options)
@@ -144,6 +156,27 @@ class ObjectImporter {
       }
     })
   }
+
+  private setCornerRadius = (refObject: any, cornerRadius: number) => {
+    // Get radius percentage (0-100)
+    const radiusPct = cornerRadius
+
+    // Calculate actual radius in pixels
+    const radiusPx = Math.min(refObject.width, refObject.height) * (radiusPct / 100)
+
+    // Create clip path
+    const clipPath = new fabric.Rect({
+      width: refObject.width,
+      height: refObject.height,
+      rx: radiusPx / (refObject.scaleX || 1),
+      ry: radiusPx / (refObject.scaleY || 1),
+      left: -(refObject.width || 0) / 2,
+      top: -(refObject.height || 0) / 2
+    })
+
+    refObject.set("clipPath", clipPath)
+  }
+
 
   public backgroundImage(item: ILayer, options: Required<ILayer>, inGroup: boolean): Promise<fabric.BackgroundImage> {
     return new Promise(async (resolve, reject) => {
