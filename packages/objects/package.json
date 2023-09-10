@@ -1,6 +1,6 @@
 {
   "name": "@nitro-design/objects",
-  "version": "0.2.0",
+  "version": "0.2.0-browser",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,11 +13,11 @@
   "license": "MIT",
   "devDependencies": {
     "@types/fabric": "^4.5.7",
-    "fabric": "^5.2.1",
+    "fabric": "5.2.1-browser",
     "typescript": "^4.6.3"
   },
   "peerDependencies": {
-    "fabric": "^5.2.1"
+    "fabric": "5.2.1-browser"
   },
   "dependencies": {
     "lodash": "^4.17.21"
